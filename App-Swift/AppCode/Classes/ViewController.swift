@@ -11,9 +11,21 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        AppTool.switchToAppStore(url: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        let imgV = UIImageView.init()
+        let color = UIColor.init(r: 255, g: 0, b: 0, alpha: 0.1)
+//        imgV.image = UIImage.image(colorList: [color, UIColor.green], size: CGSize.init(width: 100, height: 10), cornerRadius: 0)
+        imgV.image = UIImage.image(color: color)
+        imgV.frame = CGRect.init(x: 40, y: 80, width: 100, height: 10)
+        view.addSubview(imgV)
         
 //        let btn = SYVerticalLayoutButton()
 //        btn.setImage(UIImage.init(named: "normalPlayerBtn"), for: .normal)
@@ -30,10 +42,6 @@ class ViewController: UIViewController {
 //            make.width.height.equalTo(100)
 //        }
 //        let image = UIImage.image()
-        let image = UIImage.image(colorList: [UIColor.red, UIColor.green, UIColor.blue], size: CGSize.init(width: 200, height: 40))
-        let button = UIButton.init(frame: CGRect.init(x: 30, y: 64, width: 200, height: 40))
-        button.setBackgroundImage(image, for: UIControlState.normal)
-        self.view.addSubview(button)
         
         
         
@@ -54,18 +62,6 @@ class ViewController: UIViewController {
 //            make.top.left.equalTo(100)
 //            make.width.height.equalTo(100)
 //        }
-        
-        
-//        var aPoint = Point(x: 1.0, y: 3.2)
-//        
-//        withUnsafePointer(to: &aPoint) { print("\($0)") }
-////        print(Unmanaged.passRetained(aPoint as AnyObject))
-//        aPoint.move(newX: 3.0, newY: 2.1)
-//        withUnsafePointer(to: &aPoint) { print("\($0)") }
-//
-//        print(Unmanaged.passRetained(aPoint as AnyObject))
-        
-//        test()
         
 
     }

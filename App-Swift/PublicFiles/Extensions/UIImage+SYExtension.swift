@@ -43,6 +43,50 @@ extension UIImage {
         UIGraphicsPopContext()
     }
     
+    // MARK:- <-----------  由颜色生成图片  ----------->
+    /// 通过颜色生成一张纯色图片
+    class func image(color: UIColor) ->UIImage? {
+        
+        // 获取颜色的值
+        guard let components = color.cgColor.components else {
+            return nil
+        }
+        
+        guard components.count == 4 else {
+            print("暂不支持rgba之外的color")
+            return nil
+        }
+        
+        // 设置画布的大小
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        
+        // 开启上下文
+        UIGraphicsBeginImageContext(rect.size)
+        
+        // defer关键字的解释: 声明一个 block，当前代码执行的闭包退出时会执行该 block
+        defer {
+            // 结束上下文
+            UIGraphicsEndImageContext()
+        }
+        
+        // 获得当前上下文
+        let context = UIGraphicsGetCurrentContext()
+        
+        // 设置填充色
+        //        context?.setFillColor(color.cgColor)
+        context?.setFillColor(red: components[0], green: components[1], blue: components[2], alpha: components[3])
+        
+        // 设置填充rect
+        context?.fill(rect)
+        
+        // 从上下文获得图片
+        let image = UIGraphicsGetImageFromCurrentImageContext()?.withRenderingMode(.alwaysOriginal)
+        
+        
+        // 返回获得的图片
+        return image
+    }
+    
     /// 类方法来根据颜色数组初始化一个渐变色图片
     ///
     ///     let image = UIImage.image(colorList: [UIColor.red, UIColor.green, UIColor.blue], size: CGSize.init(width: 200, height: 40), cornerRadius: 20)

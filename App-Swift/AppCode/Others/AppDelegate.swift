@@ -18,11 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        
+//        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = SYBaseTabbarController()
+//        self.window?.makeKeyAndVisible()
         
         
         // 开启网络状态监控
-        startNetworkingMonitoring()
+//        startNetworkingMonitoring()
         
         
         return true

@@ -57,6 +57,11 @@
 		5468E5BA1F5505FF00816EE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468E5B41F5505FF00816EE0 /* LaunchScreen.storyboard */; };
 		5468E5BB1F5505FF00816EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468E5B61F5505FF00816EE0 /* Main.storyboard */; };
 		5468E5BC1F5505FF00816EE0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5468E5B81F5505FF00816EE0 /* Info.plist */; };
+		5480640120DCE4CF00FD21E5 /* DeviceTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5480640020DCE4CF00FD21E5 /* DeviceTool.swift */; };
+		5480640320DCE68C00FD21E5 /* AppTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5480640220DCE68C00FD21E5 /* AppTool.swift */; };
+		54909DE920D3BD3100C8B974 /* SYBaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54909DE820D3BD3100C8B974 /* SYBaseTabbarController.swift */; };
+		54909DEB20D3BE7300C8B974 /* SYTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54909DEA20D3BE7300C8B974 /* SYTabbar.swift */; };
+		54909DED20D3D1A900C8B974 /* SYTabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54909DEC20D3D1A900C8B974 /* SYTabbarItem.swift */; };
 		54A7DE7D1F5D3A29005C77D5 /* PromiseKitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A7DE7C1F5D3A29005C77D5 /* PromiseKitTest.swift */; };
 		54AFB54D1F553B55001BB903 /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54AFB54C1F553B55001BB903 /* 1.txt */; };
 		54AFB5541F5568D0001BB903 /* SYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AFB5531F5568D0001BB903 /* SYTitleView.swift */; };
@@ -159,6 +164,11 @@
 		5468E5B51F5505FF00816EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5468E5B71F5505FF00816EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5468E5B81F5505FF00816EE0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5480640020DCE4CF00FD21E5 /* DeviceTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTool.swift; sourceTree = "<group>"; };
+		5480640220DCE68C00FD21E5 /* AppTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTool.swift; sourceTree = "<group>"; };
+		54909DE820D3BD3100C8B974 /* SYBaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYBaseTabbarController.swift; sourceTree = "<group>"; };
+		54909DEA20D3BE7300C8B974 /* SYTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYTabbar.swift; sourceTree = "<group>"; };
+		54909DEC20D3D1A900C8B974 /* SYTabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYTabbarItem.swift; sourceTree = "<group>"; };
 		54A7DE7C1F5D3A29005C77D5 /* PromiseKitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKitTest.swift; sourceTree = "<group>"; };
 		54AFB54C1F553B55001BB903 /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.txt; sourceTree = "<group>"; };
 		54AFB5531F5568D0001BB903 /* SYTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SYTitleView.swift; sourceTree = "<group>"; };
@@ -339,6 +349,7 @@
 		541F3BF71F00E4320079A3A6 /* PublicFiles */ = {
 			isa = PBXGroup;
 			children = (
+				548063FF20DCE45400FD21E5 /* ToolClasses */,
 				540692C11F579BB3008EDDCB /* 技术点测试 */,
 				54AFB5481F553B4A001BB903 /* Protocols */,
 				5400E9741F53E598006B7901 /* API */,
@@ -396,6 +407,7 @@
 		5468E5851F54FF2800816EE0 /* Bases */ = {
 			isa = PBXGroup;
 			children = (
+				54909DE720D3BD0C00C8B974 /* Controller */,
 				5468E5861F54FF2800816EE0 /* ZKURLPath.swift */,
 			);
 			path = Bases;
@@ -478,6 +490,25 @@
 				5468E5B81F5505FF00816EE0 /* Info.plist */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		548063FF20DCE45400FD21E5 /* ToolClasses */ = {
+			isa = PBXGroup;
+			children = (
+				5480640020DCE4CF00FD21E5 /* DeviceTool.swift */,
+				5480640220DCE68C00FD21E5 /* AppTool.swift */,
+			);
+			path = ToolClasses;
+			sourceTree = "<group>";
+		};
+		54909DE720D3BD0C00C8B974 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54909DE820D3BD3100C8B974 /* SYBaseTabbarController.swift */,
+				54909DEA20D3BE7300C8B974 /* SYTabbar.swift */,
+				54909DEC20D3D1A900C8B974 /* SYTabbarItem.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		54A7DE7B1F5D39E3005C77D5 /* 功能测试 */ = {
@@ -609,7 +640,7 @@
 				TargetAttributes = {
 					5408CB091EF28DCA009593D8 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 5M2AGBEF85;
+						DevelopmentTeam = DPEX4222ZW;
 						ProvisioningStyle = Automatic;
 					};
 					5408CB1D1EF28DCA009593D8 = {
@@ -750,8 +781,11 @@
 				5400E9A31F540F8C006B7901 /* NormalDefine.swift in Sources */,
 				5468E5A91F5505C500816EE0 /* JKDBModel.m in Sources */,
 				5468E5AF1F5505C500816EE0 /* SYFileManager.m in Sources */,
+				54909DED20D3D1A900C8B974 /* SYTabbarItem.swift in Sources */,
 				541F3C001F00EBDE0079A3A6 /* GlobalDefine.swift in Sources */,
 				5400EAB81F5411AC006B7901 /* ColorDefine.swift in Sources */,
+				5480640320DCE68C00FD21E5 /* AppTool.swift in Sources */,
+				54909DEB20D3BE7300C8B974 /* SYTabbar.swift in Sources */,
 				5468E5871F54FF2800816EE0 /* ZKURLPath.swift in Sources */,
 				5468E5AE1F5505C500816EE0 /* SYDownloadOperation.m in Sources */,
 				54EFB1431F01FE4E000C3E7C /* UIColor+SYExtension.swift in Sources */,
@@ -760,6 +794,7 @@
 				5468E5B11F5505C500816EE0 /* SYPlayerViewController.m in Sources */,
 				5468E5B01F5505C500816EE0 /* SYM3U8Player.m in Sources */,
 				5401C7781F28795C00DD05C2 /* SYFileManager.swift in Sources */,
+				54909DE920D3BD3100C8B974 /* SYBaseTabbarController.swift in Sources */,
 				54AFB5541F5568D0001BB903 /* SYTitleView.swift in Sources */,
 				54269D921F5E9F80007FB8E0 /* SLError.swift in Sources */,
 				54F660341F25E8620081B752 /* NSData+SYExtension.swift in Sources */,
@@ -780,6 +815,7 @@
 				5459E0781F56AD99004A13DF /* Nibloadable.swift in Sources */,
 				5400EA9C1F541078006B7901 /* AppDelegate.swift in Sources */,
 				5400EAB21F541151006B7901 /* ViewController.swift in Sources */,
+				5480640120DCE4CF00FD21E5 /* DeviceTool.swift in Sources */,
 				542411FC1F62314600669AE5 /* SYVerticalLayoutButton.swift in Sources */,
 				5468E5841F54FD5200816EE0 /* UserDefaultDefine.swift in Sources */,
 				5400EABA1F5411BB006B7901 /* FontDefine.swift in Sources */,
@@ -937,7 +973,7 @@
 			baseConfigurationReference = 992912970BBEBF5B4122D251 /* Pods-App-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5M2AGBEF85;
+				DEVELOPMENT_TEAM = DPEX4222ZW;
 				GCC_PREFIX_HEADER = "App-Swift/AppCode/Others/PrefixHeader.pch";
 				INFOPLIST_FILE = "App-Swift/Others/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -955,7 +991,7 @@
 			baseConfigurationReference = 4033468AADE67D3E7E9E77D7 /* Pods-App-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5M2AGBEF85;
+				DEVELOPMENT_TEAM = DPEX4222ZW;
 				GCC_PREFIX_HEADER = "App-Swift/AppCode/Others/PrefixHeader.pch";
 				INFOPLIST_FILE = "App-Swift/Others/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

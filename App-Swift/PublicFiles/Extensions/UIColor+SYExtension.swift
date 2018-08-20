@@ -108,25 +108,35 @@ extension UIColor {
     }
     
     
-    class func color(hex: String, alpha: CGFloat? = 1.0) -> UIColor {
+    class func color(hex: String, alpha: CGFloat = 1.0) -> UIColor? {
         
         // 去掉字符串两边的空格和换行，并且全部替换成大写字母
         var cString: String = hex.trimmingCharacters(in:.whitespacesAndNewlines).uppercased()
         
         // 该字符是否是以"#"字符开头的
-        if (cString.hasPrefix("#")) {
-            
+        if (cString.hasPrefix("#"))
+        {
             // 如果是以"#"字符开头, 去掉"#"字符
             cString = cString.substring(from: cString.index(after: cString.startIndex))
-        }else if cString.hasPrefix("0x") {
+        }
+        else if cString.hasPrefix("0X")
+        {
             // 如果是以"0x"字符开头, 去掉"0x"字符
             let index = cString.index(cString.startIndex, offsetBy: 2)
             cString = cString.substring(from: index)
         }
+        else
+        {
+            // 格式不对
+            assert(false, "格式不正确")
+            return nil
+        }
         
         // 判断裁剪后的字符串是否是6位数
-        if (cString.characters.count != 6) {
-            return UIColor.clear
+        let length = cString.lengthOfBytes(using: .utf8)
+        if (length != 6) {
+            assert(false, "格式不正确,例:\"0xffffff\"")
+            return nil
         }
         
         // 分别获取前两位、中间两位、后两位字符
@@ -139,39 +149,6 @@ extension UIColor {
         Scanner(string: rString).scanHexInt32(&r)
         Scanner(string: gString).scanHexInt32(&g)
         Scanner(string: bString).scanHexInt32(&b)
-        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: alpha!)
-    }
-
-    
-    // MARK:- <-----------  由颜色生成图片  ----------->
-    /// 通过颜色生成一张纯色图片
-    class func image(color: UIColor) ->UIImage {
-        // 设置画布的大小
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
-        
-        // 开启上下文
-        UIGraphicsBeginImageContext(rect.size)
-        
-        // defer关键字的解释: 声明一个 block，当前代码执行的闭包退出时会执行该 block
-        defer {
-            // 结束上下文
-            UIGraphicsEndImageContext()
-        }
-        
-        // 获得当前上下文
-        let context = UIGraphicsGetCurrentContext()
-        
-        // 设置填充色
-        context?.setFillColor(color.cgColor)
-        
-        // 设置填充rect
-        context?.fill(rect)
-        
-        // 从上下文获得图片
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-
-        
-        // 返回获得的图片
-        return image!
+        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: alpha)
     }
 }
