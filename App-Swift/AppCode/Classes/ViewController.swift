@@ -12,13 +12,22 @@ import SnapKit
 class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        AppTool.switchToAppStore(url: nil)
+//        AppTool.switchToAppStore(url: nil)
+//        SYToast.show("啦啦啦")
+//        SYToast.show("啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦", duration: 20)
+//        SYToast.show("啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦", edgeinsets: UIEdgeInsets.init(top: 50, left: 50, bottom: 0, right: 0), duration: 20)
+        
+        let string = "已 切 换已 切 换 已 切 换 已 切 换 已切换 超清已 切 换已 切 换已 切 换"
+        let att = NSMutableAttributedString.init(string: string)
+        let range = (string as NSString).range(of: "超清")
+        att.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 15), range: NSMakeRange(0, (string as NSString).length))
+        att.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 36), range: range)
+//        SYToast.show(att)
+        SYToast.show(att, edgeinsets: UIEdgeInsets.init(top: 50, left: 50, bottom: 0, right: 0), duration: 20)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         let imgV = UIImageView.init()
         let color = UIColor.init(r: 255, g: 0, b: 0, alpha: 0.1)
