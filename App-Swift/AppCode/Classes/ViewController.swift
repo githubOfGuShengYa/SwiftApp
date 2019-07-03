@@ -26,15 +26,24 @@ class ViewController: UIViewController {
         SYToast.show(att, edgeinsets: UIEdgeInsets.init(top: 50, left: 50, bottom: 0, right: 0), duration: 20)
     }
     
+    func mutableColorView() {
+        let image = UIImage.image(colorList: [UIColor.red, UIColor.blue], size: CGSize.init(width: 100, height: 30), cornerRadius: 15)
+        let imageView = UIImageView.init(frame: CGRect.init(x: 50, y: 50, width: 100, height: 30));
+        imageView.image = image;
+        view.addSubview(imageView)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imgV = UIImageView.init()
-        let color = UIColor.init(r: 255, g: 0, b: 0, alpha: 0.1)
+        mutableColorView()
+        
+//        let imgV = UIImageView.init()
+//        let color = UIColor.init(r: 255, g: 0, b: 0, alpha: 0.1)
 //        imgV.image = UIImage.image(colorList: [color, UIColor.green], size: CGSize.init(width: 100, height: 10), cornerRadius: 0)
-        imgV.image = UIImage.image(color: color)
-        imgV.frame = CGRect.init(x: 40, y: 80, width: 100, height: 10)
-        view.addSubview(imgV)
+////        imgV.image = UIImage.image(color: color)
+//        imgV.frame = CGRect.init(x: 40, y: 80, width: 100, height: 10)
+//        view.addSubview(imgV)
         
 //        let btn = SYVerticalLayoutButton()
 //        btn.setImage(UIImage.init(named: "normalPlayerBtn"), for: .normal)
